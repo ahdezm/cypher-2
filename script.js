@@ -7,10 +7,22 @@ function encode(){
     var letter;
     if(text1.value.length == key.value.length){
         text2.value = "";
+        text1.value = text1.value.toLowerCase();
         for(var i=0;i<=text1.value.length-1;i++){    
             letter = text1.value.slice(i,i+1).charCodeAt(0)-97;
-            letter = letter + key.value.split("")[i].charCodeAt(0)-97;
-            text2.value += letter + " ";
+            if(letter == "-65"){
+                text2.value += "100 ";
+            }
+            if(letter == "-51"){
+                text2.value += "200 ";
+            }
+            if(letter == "-53"){
+                text2.value += "300";
+            }
+            else {
+                letter = letter + key.value.split("")[i].charCodeAt(0)-97;
+                text2.value += letter + " ";
+            }
         }
     }
     else {
@@ -29,8 +41,14 @@ function decode(){
             letter = text2.value.split(" ")[i];
             key_letter = key.value.slice(i,i+1).charCodeAt(0)-97;
             letter = letter-key_letter;
-            if(letter == "-65"){
+            if(letter == "100"){
                 text1.value += " ";
+            }
+            if(letter == "200"){
+                text1.value += ".";
+            }
+             if(letter == "300"){
+                text1.value += ",";
             }
             else {
                 text1.value += String.fromCharCode(letter+65).toLowerCase();
@@ -51,4 +69,20 @@ function length_2(){
     var text1 = document.getElementById("text_1");
     var length2 = document.getElementById("length_2");
     length2.innerHTML = key.value.length;
+}
+
+/*Random Key Generator*/
+
+function random_key(){
+    var chars = "abcdefghiklmnopqrstuvwxyz";
+    var text1 = document.getElementById("text_1");
+    var key = document.getElementById("key");
+    var string_length = text1.value.length;
+	key.value = "";
+    for (var i=0; i<string_length; i++) {
+		var num = Math.floor(Math.random() * chars.length);
+		key.value += chars.substring(num,num+1);
+	}
+    /*To Update Length 1 */
+    length_1();
 }

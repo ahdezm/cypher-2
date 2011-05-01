@@ -25,7 +25,7 @@ function decode(){
     var letter;
     var key_letter;
     text1.value = "";
-    for(var i=0;i<=text2.value.length-1;i++){    
+    for(var i=0;i<=key.value.length-1;i++){    
             letter = text2.value.split(" ")[i];
             key_letter = key.value.slice(i,i+1).charCodeAt(0)-97;
             letter = letter-key_letter;

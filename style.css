@@ -1,0 +1,10 @@
+textarea {
+    width:80%;
+    height:30%;
+    position:absolute;
+    left:10%;
+}
+
+textarea:nth-child(2){
+    top:30%;
+}

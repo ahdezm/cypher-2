@@ -18,6 +18,26 @@ function encode(){
     }
 }
 
+function decode(){
+    var text1 = document.getElementById("text_1");
+    var text2 = document.getElementById("text_2");
+    var key = document.getElementById("key");
+    var letter;
+    var key_letter;
+    text1.value = "";
+    for(var i=0;i<=text2.value.length-1;i++){    
+            letter = text2.value.split(" ")[i];
+            key_letter = key.value.slice(i,i+1).charCodeAt(0)-97;
+            letter = letter-key_letter;
+            if(letter == "-65"){
+                text1.value += " ";
+            }
+            else {
+                text1.value += String.fromCharCode(letter+65).toLowerCase();
+            }
+    }
+}
+
 /*Length Meter*/
 
 function length_1(){

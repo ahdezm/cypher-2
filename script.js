@@ -17,7 +17,7 @@ function encode(){
                 text2.value += "200 ";
             }
             else if(letter == "-53"){
-                text2.value += "300";
+                text2.value += "300 ";
             }
             else if(letter >= 0) {
                 letter = letter + key.value.split("")[i].charCodeAt(0)-97;
@@ -53,7 +53,6 @@ function decode(){
             else {
                 text1.value += String.fromCharCode(letter+65).toLowerCase();
             }
-            console.log(letter);
     }
 }
 

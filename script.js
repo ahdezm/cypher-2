@@ -13,13 +13,13 @@ function encode(){
             if(letter == "-65"){
                 text2.value += "100 ";
             }
-            if(letter == "-51"){
+            else if(letter == "-51"){
                 text2.value += "200 ";
             }
-            if(letter == "-53"){
+            else if(letter == "-53"){
                 text2.value += "300";
             }
-            else {
+            else if(letter >= 0) {
                 letter = letter + key.value.split("")[i].charCodeAt(0)-97;
                 text2.value += letter + " ";
             }
@@ -41,18 +41,19 @@ function decode(){
             letter = text2.value.split(" ")[i];
             key_letter = key.value.slice(i,i+1).charCodeAt(0)-97;
             letter = letter-key_letter;
-            if(letter == "100"){
-                text1.value += " ";
+            if(letter + key_letter == "100"){
+                text1.value = text1.value +  " ";
             }
-            if(letter == "200"){
+            else if(letter + key_letter == "200"){
                 text1.value += ".";
             }
-             if(letter == "300"){
+            else if(letter + key_letter == "300"){
                 text1.value += ",";
             }
             else {
                 text1.value += String.fromCharCode(letter+65).toLowerCase();
             }
+            console.log(letter);
     }
 }
 
@@ -84,5 +85,5 @@ function random_key(){
 		key.value += chars.substring(num,num+1);
 	}
     /*To Update Length 1 */
-    length_1();
+    length_2();
 }

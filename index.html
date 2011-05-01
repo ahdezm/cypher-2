@@ -5,9 +5,10 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-<textarea id="text_1"></textarea><br>
-<textarea type="text" placeholder="Key" id="key"></textarea><br>
-<button onclick="encode();">Encode</button><br>
-<textarea id="text_2"></textarea>
+<span id="length_1">0</span><textarea id="text_1" placeholder="Plain Text" onkeyup="length_1();"></textarea><br>
+<span id="length_2">0</span><textarea type="text" placeholder="Key" id="key" onkeyup="length_2();"></textarea><br>
+<textarea id="text_2" placeholder="Encoded Text"></textarea><br>
+<button onclick="encode();">Encode</button>
+<button>Decode</button>
 </body>
 </html>

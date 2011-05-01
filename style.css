@@ -5,9 +5,20 @@ textarea {
     width:60%;
     max-width:60%;
     height:25%;
+    margin-bottom:2px;
 }
 
 button {
     margin-bottom:5px;
     margin-top:5px;
+}
+
+span {
+    position:absolute;
+    left:80%;
+    color:rgb(100,100,100);
+    background:rgb(230,230,230);
+    width:20px;
+    height:20px;
+    margin-left:-4px;
 }

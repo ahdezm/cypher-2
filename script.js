@@ -8,6 +8,7 @@ function encode(){
     if(text1.value.length == key.value.length){
         text2.value = "";
         text1.value = text1.value.toLowerCase();
+        key.value = key.value.toLowerCase();
         for(var i=0;i<=text1.value.length-1;i++){    
             letter = text1.value.slice(i,i+1).charCodeAt(0)-97;
             if(letter == "-65"){
@@ -21,7 +22,11 @@ function encode(){
             }
             else if(letter >= 0) {
                 letter = letter + key.value.split("")[i].charCodeAt(0)-97;
-                text2.value += letter ;
+                if(letter > 25){
+                    letter = letter-26;
+                }
+                letter = String.fromCharCode(letter+65).toLowerCase();
+                text2.value += letter + " " ;
             }
         }
     }

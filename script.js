@@ -8,10 +8,10 @@ function encode(){
     if(text1.value.length == key.value.length){
         text2.value = "";
         text1.value = text1.value.toLowerCase();
-        key.value = key.value.toLowerCase();
         for(var i=0;i<=text1.value.length-1;i++){    
             letter = text1.value.slice(i,i+1).charCodeAt(0)-97;
             if(letter == "-65"){
+<<<<<<< HEAD
                 text2.value += "_";
             }
             else if(letter == "-51"){
@@ -19,14 +19,19 @@ function encode(){
             }
             else if(letter == "-53"){
                 text2.value += "'";
+=======
+                text2.value += "100 ";
+            }
+            else if(letter == "-51"){
+                text2.value += "200 ";
+            }
+            else if(letter == "-53"){
+                text2.value += "300";
+>>>>>>> fe81ba28388958b48f111a6919068b83e588107b
             }
             else if(letter >= 0) {
                 letter = letter + key.value.split("")[i].charCodeAt(0)-97;
-                if(letter > 25){
-                    letter = letter-26;
-                }
-                letter = String.fromCharCode(letter+65).toLowerCase();
-                text2.value += letter;
+                text2.value += letter ;
             }
         }
     }
@@ -43,12 +48,13 @@ function decode(){
     var key_letter;
     text1.value = "";
     for(var i=0;i<=key.value.length-1;i++){    
-            letter = text2.value.split("")[i].charCodeAt(0)-97;
+            letter = text2.value.split(" ")[i];
             key_letter = key.value.slice(i,i+1).charCodeAt(0)-97;
             if(letter-key_letter < 0){
                 letter = letter + 26;
             }
             letter = letter-key_letter;
+<<<<<<< HEAD
             
             if(text2.value.split("")[i] == "_"){
                 text1.value = text1.value +  " ";
@@ -57,6 +63,15 @@ function decode(){
                 text1.value += ".";
             }
             else if(text2.value.split("")[i] == "'"){
+=======
+            if(letter + key_letter == "100"){
+                text1.value = text1.value +  " ";
+            }
+            else if(letter + key_letter == "200"){
+                text1.value += ".";
+            }
+            else if(letter + key_letter == "300"){
+>>>>>>> fe81ba28388958b48f111a6919068b83e588107b
                 text1.value += ",";
             }
             else {

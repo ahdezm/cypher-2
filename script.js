@@ -12,13 +12,13 @@ function encode(){
         for(var i=0;i<=text1.value.length-1;i++){    
             letter = text1.value.slice(i,i+1).charCodeAt(0)-97;
             if(letter == "-65"){
-                text2.value += " ";
+                text2.value += "0";
             }
             else if(letter == "-51"){
-                text2.value += ".";
+                text2.value += "1";
             }
             else if(letter == "-53"){
-                text2.value += ",";
+                text2.value += "2";
             }
             else if(letter >= 0) {
                 letter = letter + key.value.split("")[i].charCodeAt(0)-97;
@@ -44,15 +44,22 @@ function decode(){
     text1.value = "";
     for(var i=0;i<=key.value.length-1;i++){    
             letter = text2.value.split("")[i].charCodeAt(0)-97;
+            console.log(letter);
             key_letter = key.value.slice(i,i+1).charCodeAt(0)-97;
+            if(letter-key_letter < 0){
+                console.log(letter);
+                letter = letter + 26;
+                console.log(letter);
+            }
             letter = letter-key_letter;
-            if(text2.value.split("")[i] == " "){
+            
+            if(text2.value.split("")[i] == "0"){
                 text1.value = text1.value +  " ";
             }
-            else if(text2.value.split("")[i] == "."){
+            else if(text2.value.split("")[i] == "1"){
                 text1.value += ".";
             }
-            else if(text2.value.split("")[i] == ","){
+            else if(text2.value.split("")[i] == "2"){
                 text1.value += ",";
             }
             else {

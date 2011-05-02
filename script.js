@@ -17,11 +17,11 @@ function encode(){
                 text2.value += "200 ";
             }
             else if(letter == "-53"){
-                text2.value += "300 ";
+                text2.value += "300";
             }
             else if(letter >= 0) {
                 letter = letter + key.value.split("")[i].charCodeAt(0)-97;
-                text2.value += letter + " ";
+                text2.value += letter ;
             }
         }
     }

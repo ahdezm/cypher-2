@@ -11,14 +11,15 @@ function encode(){
         key.value = key.value.toLowerCase();
         for(var i=0;i<=text1.value.length-1;i++){    
             letter = text1.value.slice(i,i+1).charCodeAt(0)-97;
+            console.log(letter)
             if(letter == "-65"){
-                text2.value += " ";
+                text2.value += "_";
             }
             else if(letter == "-51"){
-                text2.value += ".";
+                text2.value += "-";
             }
             else if(letter == "-53"){
-                text2.value += ",";
+                text2.value += "/";
             }
             else if(letter >= 0) {
                 letter = letter + key.value.split("")[i].charCodeAt(0)-97;
@@ -45,7 +46,11 @@ function decode(){
     for(var i=0;i<=key.value.length-1;i++){    
             letter = text2.value.split("")[i].charCodeAt(0)-97;
             key_letter = key.value.slice(i,i+1).charCodeAt(0)-97;
+            if(letter-key_letter < 0){
+                letter = letter + 26;
+            }
             letter = letter-key_letter;
+            
             if(text2.value.split("")[i] == " "){
                 text1.value = text1.value +  " ";
             }

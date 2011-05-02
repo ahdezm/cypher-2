@@ -11,6 +11,7 @@ function encode(){
         key.value = key.value.toLowerCase();
         for(var i=0;i<=text1.value.length-1;i++){    
             letter = text1.value.slice(i,i+1).charCodeAt(0)-97;
+            console.log(letter);
             if(letter == "-65"){
                 text2.value += "_";
             }
@@ -19,6 +20,9 @@ function encode(){
             }
             else if(letter == "-53"){
                 text2.value += "'";
+            }
+            else if(letter == "-87"){
+                text2.value += "|";
             }
             else if(letter >= 0) {
                 letter = letter + key.value.split("")[i].charCodeAt(0)-97;
@@ -58,6 +62,9 @@ function decode(){
             }
             else if(text2.value.split("")[i] == "'"){
                 text1.value += ",";
+            }
+            else if(text2.value.split("")[i] == "|"){
+                text1.value += "\n";
             }
             else {
                 text1.value += String.fromCharCode(letter+65).toLowerCase();

@@ -12,13 +12,13 @@ function encode(){
         for(var i=0;i<=text1.value.length-1;i++){    
             letter = text1.value.slice(i,i+1).charCodeAt(0)-97;
             if(letter == "-65"){
-                text2.value += "100 ";
+                text2.value += " ";
             }
             else if(letter == "-51"){
-                text2.value += "200 ";
+                text2.value += ".";
             }
             else if(letter == "-53"){
-                text2.value += "300";
+                text2.value += ",";
             }
             else if(letter >= 0) {
                 letter = letter + key.value.split("")[i].charCodeAt(0)-97;
@@ -26,7 +26,7 @@ function encode(){
                     letter = letter-26;
                 }
                 letter = String.fromCharCode(letter+65).toLowerCase();
-                text2.value += letter + " " ;
+                text2.value += letter;
             }
         }
     }
@@ -43,16 +43,16 @@ function decode(){
     var key_letter;
     text1.value = "";
     for(var i=0;i<=key.value.length-1;i++){    
-            letter = text2.value.split(" ")[i];
+            letter = text2.value.split("")[i].charCodeAt(0)-97;
             key_letter = key.value.slice(i,i+1).charCodeAt(0)-97;
             letter = letter-key_letter;
-            if(letter + key_letter == "100"){
+            if(text2.value.split("")[i] == " "){
                 text1.value = text1.value +  " ";
             }
-            else if(letter + key_letter == "200"){
+            else if(text2.value.split("")[i] == "."){
                 text1.value += ".";
             }
-            else if(letter + key_letter == "300"){
+            else if(text2.value.split("")[i] == ","){
                 text1.value += ",";
             }
             else {

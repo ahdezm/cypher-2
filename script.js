@@ -22,7 +22,7 @@ function encode(){
                 text2.value += "'";
             }
             else if(letter == "-87"){
-                text2.value += "|";
+                text2.value += "\n";
             }
             else if(letter >= 0) {
                 letter = letter + key.value.split("")[i].charCodeAt(0)-97;
@@ -63,7 +63,7 @@ function decode(){
             else if(text2.value.split("")[i] == "'"){
                 text1.value += ",";
             }
-            else if(text2.value.split("")[i] == "|"){
+            else if(text2.value.split("")[i] == "\n"){
                 text1.value += "\n";
             }
             else {

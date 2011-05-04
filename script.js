@@ -13,13 +13,13 @@ function encode(){
             letter = text1.value.slice(i,i+1).charCodeAt(0)-97;
             console.log(letter);
             if(letter == "-65"){
-                text2.value += "_";
+                text2.value += " ";
             }
             else if(letter == "-51"){
-                text2.value += "-";
+                text2.value += ".";
             }
             else if(letter == "-53"){
-                text2.value += "'";
+                text2.value += ",";
             }
             else if(letter == "-87"){
                 text2.value += "\n";
@@ -54,13 +54,13 @@ function decode(){
             }
             letter = letter-key_letter;
             
-            if(text2.value.split("")[i] == "_"){
+            if(text2.value.split("")[i] == " "){
                 text1.value = text1.value +  " ";
             }
-            else if(text2.value.split("")[i] == "-"){
+            else if(text2.value.split("")[i] == "."){
                 text1.value += ".";
             }
-            else if(text2.value.split("")[i] == "'"){
+            else if(text2.value.split("")[i] == ","){
                 text1.value += ",";
             }
             else if(text2.value.split("")[i] == "\n"){

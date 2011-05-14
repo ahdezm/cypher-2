@@ -27,6 +27,9 @@ function encode(){
             else if(letter == "-2"){
                 text2.value += "_";
             }
+            else if(letter == "-52"){
+                text2.value += "-";
+            }
             else if(letter >= 0) {
                 letter = letter + key.value.split("")[i].charCodeAt(0)-97;
                 if(letter > 25){
@@ -71,6 +74,9 @@ function decode(){
             }
             else if(text2.value.split("")[i] == "_"){
                 text1.value += "_";
+            }
+            else if(text2.value.split("")[i] == "-"){
+                text1.value += "-";
             }
             else {
                 text1.value += String.fromCharCode(letter+65).toLowerCase();

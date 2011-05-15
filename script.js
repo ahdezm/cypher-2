@@ -14,9 +14,9 @@ function encode(){
             console.log(letter);
             var special_chars = new Array(" ",".",",","\n","_","-",":",";","?","!");
             var special_chars_ref = new Array("-65","-51","-53","-87","-2","-52","-39","-38","-34","-64");
-            for(var i = 0;i<=special_chars.length;i++){
-                if(letter == special_chars_ref[i]){
-                    text2.value += special_chars[i];
+            for(var a=0;a<=special_chars.length;a++){
+                if(letter == special_chars_ref[a]){
+                    text2.value += special_chars[a];
                 }
             }
             if(letter >= 0) {

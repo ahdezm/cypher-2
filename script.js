@@ -12,31 +12,14 @@ function encode(){
         for(var i=0;i<=text1.value.length-1;i++){    
             letter = text1.value.slice(i,i+1).charCodeAt(0)-97;
             console.log(letter);
-            if(letter == "-65"){
-                text2.value += " ";
+            var special_chars = new Array(" ",".",",","\n","_","-",":",";","?","!");
+            var special_chars_ref = new Array("-65","-51","-53","-87","-2","-52","-39","-38","-34","-64");
+            for(var i = 0;i<=special_chars.length;i++){
+                if(letter == special_chars_ref[i]){
+                    text2.value += special_chars[i];
+                }
             }
-            else if(letter == "-51"){
-                text2.value += ".";
-            }
-            else if(letter == "-53"){
-                text2.value += ",";
-            }
-            else if(letter == "-87"){
-                text2.value += "\n";
-            }
-            else if(letter == "-2"){
-                text2.value += "_";
-            }
-            else if(letter == "-52"){
-                text2.value += "-";
-            }
-            else if(letter == "-39"){
-                text2.value += ":";
-            }
-            else if(letter == "-38"){
-                text2.value += ";";
-            }
-            else if(letter >= 0) {
+            if(letter >= 0) {
                 letter = letter + key.value.split("")[i].charCodeAt(0)-97;
                 if(letter > 25){
                     letter = letter-26;
@@ -65,7 +48,6 @@ function decode(){
                 letter = letter + 26;
             }
             letter = letter-key_letter;
-            
             if(text2.value.split("")[i] == " "){
                 text1.value = text1.value +  " ";
             }
@@ -89,6 +71,12 @@ function decode(){
             }
             else if(text2.value.split("")[i] == ";"){
                 text1.value += ";";
+            }
+            else if(text2.value.split("")[i] == "?"){
+                text1.value += "?";
+            }
+            else if(text2.value.split("")[i] == "!"){
+                text1.value += "!";
             }
             else {
                 text1.value += String.fromCharCode(letter+65).toLowerCase();

@@ -48,6 +48,7 @@ function decode(){
                 letter = letter + 26;
             }
             letter = letter-key_letter;
+            var special_chars = new Array(" ",".",",","\n","_","-",":",";","?","!");
             if(text2.value.split("")[i] == " "){
                 text1.value = text1.value +  " ";
             }

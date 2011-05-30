@@ -106,13 +106,16 @@ function random_key(){
     var text1 = document.getElementById("text_1");
     var key = document.getElementById("key");
     var string_length = text1.value.length;
-    key.value = "";
-    for (var i=0; i<string_length; i++) {
-    	var num = Math.floor(Math.random()*chars.length);
-		key.value += chars.substring(num,num+1);
-	}
-    
-    /*To Update Length 1 */
-    
-    length_2();
+    if(text1.value.length>0){
+        key.value = "";
+        for (var i=0; i<string_length; i++) {
+    	    var num = Math.floor(Math.random()*chars.length);
+		    key.value += chars.substring(num,num+1);
+	    }
+        
+        length_2();
+    }
+    else {
+        alert("The Plaintext must have a value largen than 0");    
+    }
 }

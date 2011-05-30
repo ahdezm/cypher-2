@@ -112,10 +112,11 @@ function random_key(){
     	    var num = Math.floor(Math.random()*chars.length);
 		    key.value += chars.substring(num,num+1);
 	    }
-        
+        /*Updates Plaintext Length Counter*/
         length_2();
     }
     else {
-        alert("The Plaintext must have a value largen than 0");    
+        /*If Plaintext is Empty*/
+		alert("The Plaintext must have a value largen than 0");    
     }
 }

@@ -11,8 +11,8 @@ function encode(){
         key.value = key.value.toLowerCase();
         for(var i=0;i<=text1.value.length-1;i++){    
             letter = text1.value.slice(i,i+1).charCodeAt(0)-97;
-            console.log(letter);
-            var special_chars = new Array(" ",".",",","\n","_","-",":",";","?","!");
+            /*Check for Special Characters*/
+			var special_chars = new Array(" ",".",",","\n","_","-",":",";","?","!");
             var special_chars_ref = new Array("-65","-51","-53","-87","-2","-52","-39","-38","-34","-64");
             for(var a=0;a<=special_chars.length;a++){
                 if(letter == special_chars_ref[a]){

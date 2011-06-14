@@ -10,4 +10,5 @@ span {
 button {
     -webkit-transform:scale(1.5); 
     margin-bottom:10px;
+    margin-left:10px;
 }

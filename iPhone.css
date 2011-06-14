@@ -8,5 +8,6 @@ span {
 }
 
 button {
-    -webkit-transform:scale(2);    
+    -webkit-transform:scale(1.5); 
+    margin-bottom:10px;
 }

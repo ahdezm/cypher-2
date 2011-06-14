@@ -1,8 +1,9 @@
 textarea {
-    width:95%;
-    max-width:95%;
+    width:98%;
+    max-width:98%;
     height:40%;
     min-height:100px;
+    margin-bottom:5%;
 }
 
 textarea::-webkit-input-placeholder {

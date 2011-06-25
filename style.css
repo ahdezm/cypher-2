@@ -12,6 +12,7 @@ textarea {
 
 textarea:focus{
 	outline: none;
+	background:-webkit-radial-gradient(transparent 20%,rgba(0,0,0,.02));
 }
 
 button {

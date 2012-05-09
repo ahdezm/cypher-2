@@ -5,13 +5,14 @@ textarea {
     width:60%;
     max-width:60%;
     height:25%;
-    max-height:30%;
+    max-height:35%;
     margin-bottom:2px;
     border:solid 1px rgb(200,200,200);
 }
 
 textarea:focus{
 	outline: none;
+	background:-webkit-radial-gradient(transparent 20%,rgba(0,0,0,.02));
 }
 
 button {

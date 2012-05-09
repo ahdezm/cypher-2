@@ -1,4 +1,3 @@
-/*Encode and Decode*/
 var cypher = function(){
     "use strict";
     cypher.text1 = document.getElementById("text_1");
@@ -16,8 +15,8 @@ var cypher = function(){
                 /*Check for Special Characters*/
                 var special_chars = [" ",".",",","\n","_","-",":",";","?","!"];
                 var special_chars_ref = ["-65","-51","-53","-87","-2","-52","-39","-38","-34","-64"];
-                for(var a=0;a<=special_chars.length;a++){
-                    if(letter == special_chars_ref[a]){
+                for(var a = 0; a < special_chars.length; a++){
+                    if(letter.match(special_chars_ref[a])){
                         this.text2.value += special_chars[a];
                     }
                 }
@@ -32,7 +31,7 @@ var cypher = function(){
             }
         }
         else {
-            alert("The Key must be the same length as The plain Text");
+            alert("The Key must be the same length as the PlainText");
         }
     };
     cypher.decode = function(){

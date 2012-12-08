@@ -45,43 +45,11 @@ var cypher = function(){
                     letter = letter + 26;
                 }
                 letter = letter-key_letter;
-                switch(this.text2.value.split("")[i]){
-                    case " ":
-                        cypher.excep(" ");
-                        break;
-                    case ".": 
-                        cypher.excep(".");
-                        break;
-                    case ".": 
-                        cypher.excep(".");
-                        break;
-                    case ",": 
-                        cypher.excep(",");
-                        break;
-                    case "\n": 
-                        cypher.excep("\n");
-                        break;
-                    case "_": 
-                        cypher.excep("_");
-                        break;
-                    case "-": 
-                        cypher.excep("-");
-                        break;
-                    case ":": 
-                        cypher.excep(":");
-                        break;
-                    case ";": 
-                        cypher.excep(";");
-                        break;
-                    case "?": 
-                        cypher.excep("?");
-                        break;
-                    case "!": 
-                        cypher.excep("!");
-                        break;
-                    default:
-                        this.text1.value += String.fromCharCode(letter+65).toLowerCase();
-                        break;
+                var character = this.text2.value.split("")[i];
+                if(Array.prototype.filter.call([" ",".",",","\n","_","-",":",";","?","!"],function(self){return (self == character)}).length > 0){
+                    this.text1.value += character;
+                } else {
+                    this.text1.value += String.fromCharCode(letter+65).toLowerCase();
                 }
         }
     };
@@ -101,9 +69,6 @@ var cypher = function(){
         else {
             alert("No plaintext avalible");    
         }
-    };
-    cypher.excep = function(string){
-        this.text1.value += string;
     };
     
     document.getElementById("encode").addEventListener("click",function(){

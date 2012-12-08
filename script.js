@@ -3,6 +3,8 @@ var cypher = function(){
     cypher.text1 = document.getElementById("text_1");
     cypher.text2 = document.getElementById("text_2");
     cypher.key = document.getElementById("key");
+    cypher.length1 = document.getElementById("length_1");
+    cypher.length2 = document.getElementById("length_2");
     
     cypher.encode = function(){
         var letter;
@@ -54,17 +56,13 @@ var cypher = function(){
         }
     };
     cypher.random_key = function(){
-        var chars = "abcdefghiklmnopqrstuvwxyz";
-        var text1 = document.getElementById("text_1");
-        var key = document.getElementById("key");
-        var string_length = text1.value.length;
-        if(text1.value.length > 0){
-            key.value = "";
-            for (var i=0; i<string_length; i++) {
-                var num = Math.floor(Math.random()*chars.length);
-                key.value += chars.substring(num,num+1);
-            }
-             document.getElementById("length_2").innerHTML = cypher.key.value.length;
+        var string = this.text1.value;
+        if(this.text1.value.length > 0){
+            this.key.value = "";
+            $.get("http://www.random.org/strings/?num=1&digits=off&upperalpha=off&loweralpha=on&unique=on&format=plain&rnd=new&len=" + string.length,(function(data){
+                this.key.value = data.slice(0,string.length);
+                this.length2.innerHTML = this.key.value.length;
+            }).bind(this));
         }
         else {
             alert("No plaintext avalible");    
@@ -82,10 +80,10 @@ var cypher = function(){
     },false);
     
     cypher.text1.addEventListener("keyup",function(){
-        document.getElementById("length_1").innerHTML = cypher.text1.value.length;
+        cypher.length1.innerHTML = cypher.text1.value.length;
     },false);
     cypher.key.addEventListener("keyup",function(){
-        document.getElementById("length_2").innerHTML = cypher.key.value.length;
+        cypher.length2.innerHTML = cypher.key.value.length;
     },false);
 };
 

@@ -16,7 +16,7 @@ var cypher = function(){
                 var special_chars = [" ",".",",","\n","_","-",":",";","?","!"];
                 var special_chars_ref = ["-65","-51","-53","-87","-2","-52","-39","-38","-34","-64"];
                 for(var a = 0; a < special_chars.length; a++){
-                    if(letter.match(special_chars_ref[a])){
+                    if(letter.toString().match(special_chars_ref[a])){
                         this.text2.value += special_chars[a];
                     }
                 }
@@ -119,7 +119,7 @@ var cypher = function(){
     cypher.text1.addEventListener("keyup",function(){
         document.getElementById("length_1").innerHTML = cypher.text1.value.length;
     },false);
-    cypher.text2.addEventListener("keyup",function(){
+    cypher.key.addEventListener("keyup",function(){
         document.getElementById("length_2").innerHTML = cypher.key.value.length;
     },false);
 };

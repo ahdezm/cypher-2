@@ -6,16 +6,22 @@
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
 </head>
 <body>
-    
-    <span id="length_1">0</span>
-    <textarea id="plain" placeholder="Plain Text"></textarea><br>
-    <span id="length_2">0</span>
-    <textarea id="key" type="text" placeholder="Key"></textarea><br>
-    <textarea id="cypher" placeholder="Encoded Text"></textarea><br>
-    <button id="encode">Encode</button>
-    <button id="decode">Decode</button><br>
-    <button id="random_key">Generate Random Key</button>
-
+    <div class="text">
+        <span id="length_plain">0</span>
+        <textarea id="plain" placeholder="Plain Text"></textarea><br>
+    </div>
+    <div class="text">
+        <span id="length_key">0</span>
+        <textarea id="key" type="text" placeholder="Key"></textarea><br>
+    </div>
+    <div class="text">
+        <textarea id="cypher" placeholder="Encoded Text"></textarea><br>
+    </div>
+    <div>
+        <button id="encode">Encode</button>
+        <button id="decode">Decode</button><br>
+        <button id="random_key">Generate Random Key</button>
+    </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
 <script src="script.js"></script>

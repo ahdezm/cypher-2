@@ -4,25 +4,14 @@ html,body {
 body {
     text-align:center;
     background:#EBEBEB;
-<<<<<<< HEAD
     margin:0px;
-=======
-    margin:8px 0px 0px 0px;
->>>>>>> 72ec235eea38d45f054d7df25cba51a31c1b9292
 }
 
 div.text {
     height:25%;
     max-height:35%;
-<<<<<<< HEAD
     min-height:150px;
-    
     margin-top:8px;
-=======
-    min-height:100px;
-    
-    margin-bottom:8px;
->>>>>>> 72ec235eea38d45f054d7df25cba51a31c1b9292
     
     resize:vertical;
 }
@@ -33,13 +22,7 @@ div.text textarea {
     
     height:100%;
     max-height:100%;
-<<<<<<< HEAD
     min-height:150px;
-=======
-    min-height:100px;
->>>>>>> 72ec235eea38d45f054d7df25cba51a31c1b9292
-    
-    
     
     border: solid 1px #B3B3B3;
     

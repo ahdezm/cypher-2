@@ -41,25 +41,25 @@ var cypher = function(){
         var key_letter;
         this.text1.value = "";
         for(var i = 0; i < this.key.value.length; i++){    
-                letter = this.text2.value.split("")[i].charCodeAt(0)-97;
-                key_letter = this.key.value.slice(i,i+1).charCodeAt(0)-97;
-                if(letter-key_letter < 0){
-                    letter = letter + 26;
-                }
-                letter = letter-key_letter;
-                var character = this.text2.value.split("")[i];
-                if(Array.prototype.filter.call([" ",".",",","\n","_","-",":",";","?","!"],function(self){return (self == character)}).length > 0){
-                    this.text1.value += character;
-                } else {
-                    this.text1.value += String.fromCharCode(letter+65).toLowerCase();
-                }
+            letter = this.text2.value.split("")[i].charCodeAt(0)-97;
+            key_letter = this.key.value.slice(i,i+1).charCodeAt(0)-97;
+            if(letter-key_letter < 0){
+                letter = letter + 26;
+            }
+            letter = letter-key_letter;
+            var character = this.text2.value.split("")[i];
+            if(Array.prototype.filter.call([" ",".",",","\n","_","-",":",";","?","!"],function(self){return (self == character)}).length > 0){
+                this.text1.value += character;
+            } else {
+                this.text1.value += String.fromCharCode(letter+65).toLowerCase();
+            }
         }
     };
     cypher.random_key = function(){
         var string = this.text1.value;
         if(this.text1.value.length > 0){
             this.key.value = "";
-            $.get("http://www.random.org/strings/?num=1&digits=off&upperalpha=off&loweralpha=on&unique=on&format=plain&rnd=new&len=" + string.length,(function(data){
+            window.$.get("http://www.random.org/strings/?num=1&digits=off&upperalpha=off&loweralpha=on&unique=on&format=plain&rnd=new&len=" + string.length,(function(data){
                 this.key.value = data.slice(0,string.length);
                 this.length2.innerHTML = this.key.value.length;
             }).bind(this));

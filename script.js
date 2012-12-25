@@ -3,8 +3,8 @@ var cypher = function(){
     cypher.plain = document.getElementById("plain");
     cypher.cypher = document.getElementById("cypher");
     cypher.key = document.getElementById("key");
-    cypher.length1 = document.getElementById("length_1");
-    cypher.length2 = document.getElementById("length_2");
+    cypher.lengthPlain = document.getElementById("length_plain");
+    cypher.lengthKey = document.getElementById("length_key");
     
     cypher.encode = function(){
         var letter;
@@ -61,7 +61,7 @@ var cypher = function(){
             this.key.value = "";
             window.$.get("http://www.random.org/strings/?num=1&digits=off&upperalpha=off&loweralpha=on&unique=on&format=plain&rnd=new&len=" + string.length,(function(data){
                 this.key.value = data.slice(0,string.length);
-                this.length2.innerHTML = this.key.value.length;
+                this.lengthKey.innerHTML = this.key.value.length;
             }).bind(this));
         }
         else {
@@ -80,10 +80,10 @@ var cypher = function(){
     },false);
     
     cypher.plain.addEventListener("keyup",function(){
-        cypher.length1.innerHTML = cypher.plain.value.length;
+        cypher.lengthPlain.innerHTML = cypher.plain.value.length;
     },false);
     cypher.key.addEventListener("keyup",function(){
-        cypher.length2.innerHTML = cypher.key.value.length;
+        cypher.lengthKey.innerHTML = cypher.key.value.length;
     },false);
 };
 
